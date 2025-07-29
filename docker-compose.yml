@@ -9,6 +9,11 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U catalogodosabioadmin" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
   redis:
     image: redis
@@ -22,14 +27,13 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
-      SPRING_DATASOURCE_USERNAME: catalogodosabioadmin
-      SPRING_DATASOURCE_PASSWORD: topsecret123
+      SPRING_DATASOURCE_HOST: postgres
       SPRING_REDIS_HOST: redis
-      SPRING_REDIS_PORT: 6379
     depends_on:
-      - postgres
-      - redis
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
 
 volumes:
   pgdata:

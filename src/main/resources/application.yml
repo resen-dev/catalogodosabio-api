@@ -5,12 +5,13 @@ spring:
   cache:
     type: redis
 
-  redis:
-    host: localhost
-    port: 6379
+  data:
+    redis:
+      host: ${SPRING_REDIS_HOST:localhost}
+      port: 6379
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=catalogodosabio
+    url: jdbc:postgresql://${SPRING_DATASOURCE_HOST:localhost}:5432/postgres?currentSchema=catalogodosabio
     username: catalogodosabioadmin
     password: topsecret123
     driver-class-name: org.postgresql.Driver
