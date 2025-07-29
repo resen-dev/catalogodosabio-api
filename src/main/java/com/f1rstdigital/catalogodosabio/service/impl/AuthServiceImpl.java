@@ -48,8 +48,8 @@ public class AuthServiceImpl implements AuthService {
             throw new EmailAlreadyExistsException();
         }
 
-        Role userRole = roleRepository.findByName("ROLE_USERR")
-                .orElseThrow(() -> new RoleNotFoundException("ROLE_USERR"));
+        Role userRole = roleRepository.findByName("ROLE_USER")
+                .orElseThrow(() -> new RoleNotFoundException("ROLE_USER"));
 
         User user = new User();
         user.setName(request.name());
