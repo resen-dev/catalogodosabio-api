@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "f16e0239-57e8-45bc-b6c5-7e7206fb54b3",
+		"name": "catalogo-do-sabio-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20003415"
+	},
+	"item": [
+		{
+			"name": "/api/v1",
+			"item": [
+				{
+					"name": "books",
+					"item": [
+						{
+							"name": "books",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/books?size=10&page=1&sort=genre.name,desc",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"books"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "sort",
+											"value": "genre.name,desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/books/{id}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/books/b11ae6e0-b9cd-491a-8738-619554c1aab3",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"books",
+										"b11ae6e0-b9cd-491a-8738-619554c1aab3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books/author/{authorId}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/books/author/28cc236f-67a4-4e90-b53f-f0f3cfd7070f59",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"books",
+										"author",
+										"28cc236f-67a4-4e90-b53f-f0f3cfd7070f59"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books/genre/{genreId}",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/books/genre/21bc089d-09b1-4103-915c-de07b1a3fffa",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"books",
+										"genre",
+										"21bc089d-09b1-4103-915c-de07b1a3fffa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books/recently-viewed",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/books/recently-viewed",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"books",
+										"recently-viewed"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Great Gatsby\",\r\n  \"description\": \"A novel set in the Roaring Twenties.\",\r\n  \"authorId\": \"47b77f8e-d4ed-4bad-8651-4936505d45d3\",\r\n  \"genreId\": \"0e8e0e2f-6206-486c-b2ed-1dc3fd605778\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/books",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Great Gatsby - UPDATE\",\r\n  \"description\": \"A novel set in the Roaring Twenties.\",\r\n  \"authorId\": \"47b77f8e-d4ed-4bad-8651-4936505d45d3\",\r\n  \"genreId\": \"0e8e0e2f-6206-486c-b2ed-1dc3fd605778\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/books/675a9d5a-344f-4161-8a05-b7fcd0ffc2a2",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"books",
+										"675a9d5a-344f-4161-8a05-b7fcd0ffc2a2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "books",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/books/675a9d5a-344f-4161-8a05-b7fcd0ffc2a2",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"books",
+										"675a9d5a-344f-4161-8a05-b7fcd0ffc2a2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "genres",
+					"item": [
+						{
+							"name": "genres",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/genres",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"genres"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "genres",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/genres",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"genres"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "genres/{id}",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/genres/7c3a6b9f-5a93-4bba-acc4-886440bc044c",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"genres",
+										"7c3a6b9f-5a93-4bba-acc4-886440bc044c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "genres/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/genres/675a9d5a-344f-4161-8a05-b7fcd0ffc2a2",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"genres",
+										"675a9d5a-344f-4161-8a05-b7fcd0ffc2a2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "authors",
+					"item": [
+						{
+							"name": "authors",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/authors?page=2",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"authors"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "authors",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/authors",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"authors"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "authors/{id}",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test-update\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/authors/f83dd673-6fa8-40f3-9a13-f2616da64243",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"authors",
+										"f83dd673-6fa8-40f3-9a13-f2616da64243"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "authors/{id}",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base-url}}/authors/f83dd673-6fa8-40f3-9a13-f2616da64243",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"authors",
+										"f83dd673-6fa8-40f3-9a13-f2616da64243"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "/register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"raul\",\r\n    \"email\": \"email@email.com\",\r\n    \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/auth/register",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@admin.com\",\r\n    \"password\": \"admin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base-url}}/auth/login",
+									"host": [
+										"{{base-url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4MzliMjVmZC0xMjZiLTRmNzEtODgyZi1kYWY4Y2U1MTQ0ODAiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsInJvbGVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzUzODA2ODQyLCJleHAiOjE3NTM4MTA0NDJ9.S4Ikpk3hsRzUc56CX914EV2VbVt6TwCH_CWkNrp8zWM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "{{base-url}}",
+			"type": "default"
+		}
+	]
+}
