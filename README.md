@@ -97,6 +97,20 @@ Para otimizar o desempenho e reduzir o número de consultas ao banco de dados, a
 - Cada cache utiliza uma chave específica que considera parâmetros como página, tamanho, filtros ou ordenações, para garantir a granularidade e evitar dados incorretos.
 - Sempre que uma entidade é criada, atualizada ou deletada, o cache relacionado é invalidado (limpo) automaticamente para manter a consistência dos dados.
 
+### Testes Automatizados
+
+A API possui cobertura de testes unitários para as principais regras de negócio, utilizando:
+- **JUnit 5** e **Mockito** para testes de serviços (`BookService`, `AuthorService`, `GenreService`).
+
+### Dados de Exemplo (Seeder)
+
+Ao iniciar a aplicação, um seeder baseado em Java Faker é executado para popular o banco com dados realistas de livros, autores e gêneros. Isso pode ser controlado pela propriedade:
+
+```yaml 
+dataseeder:
+  generate: true
+```
+
 ## III. Como Executar a Aplicação
 
 ### Pré-requisitos
