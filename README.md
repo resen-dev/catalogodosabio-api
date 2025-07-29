@@ -97,3 +97,31 @@ Para otimizar o desempenho e reduzir o número de consultas ao banco de dados, a
 - Cada cache utiliza uma chave específica que considera parâmetros como página, tamanho, filtros ou ordenações, para garantir a granularidade e evitar dados incorretos.
 - Sempre que uma entidade é criada, atualizada ou deletada, o cache relacionado é invalidado (limpo) automaticamente para manter a consistência dos dados.
 
+## III. Como Executar a Aplicação
+
+### Pré-requisitos
+
+- Ter o [Docker](https://www.docker.com/get-started) instalado e rodando na sua máquina.  
+- Ter o código fonte clonado com o arquivo `docker-compose.yml` na raiz do projeto.
+
+### Passos para executar
+
+1. **Navegue até a pasta do projeto no terminal:**
+
+```bash
+cd caminho/para/seu/projeto
+```
+
+2. **Suba os containers com o Docker Compose (buildando a imagem da API):**
+
+```bash
+docker-compose up --build
+```
+
+3. **Aguarde o build e a inicialização dos containers (Postgres, Redis e API).**
+
+4. **Importe a collection no Postman:**
+
+- Com o arquivo `postman_collection__catalogodosabio-api.json` que está na raiz do projeto você poderá testar todos os endpoints da API diretamente pelo Postman.
+
+
