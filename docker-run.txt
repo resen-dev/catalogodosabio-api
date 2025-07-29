@@ -1,0 +1,3 @@
+docker run -d --name catalogodosabio-postgres -e POSTGRES_USER=catalogodosabioadmin -e POSTGRES_PASSWORD=topsecret123 -p 5432:5432 postgres
+
+docker run --name catalogodosabio-redis -p 6379:6379 -d redis

@@ -1,0 +1,7 @@
+CREATE SCHEMA IF NOT EXISTS test_schema;
+CREATE SCHEMA IF NOT EXISTS catalogodosabio;
+
+CREATE TABLE author (
+    id UUID PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE
+);

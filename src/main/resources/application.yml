@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: local
+
+  cache:
+    type: redis
+
+  redis:
+    host: localhost
+    port: 6379
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=catalogodosabio
+    username: catalogodosabioadmin
+    password: topsecret123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        default_schema: catalogodosabio
+
+  flyway:
+    enabled: true
+    schemas: catalogodosabio
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+dataseeder:
+  generate: true
+  authors: 30
+  genres: 10
+  books: 100
+
+jwt:
+  expirationMillis: 3600000
+
+app:
+  recently-viewed:
+    limit: 5
+

@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres
+    container_name: catalogodosabio-postgres
+    environment:
+      POSTGRES_USER: catalogodosabioadmin
+      POSTGRES_PASSWORD: topsecret123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis
+    container_name: catalogodosabio-redis
+    ports:
+      - "6379:6379"
+
+  api:
+    build: .
+    container_name: catalogodosabio-api
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/postgres
+      SPRING_DATASOURCE_USERNAME: catalogodosabioadmin
+      SPRING_DATASOURCE_PASSWORD: topsecret123
+      SPRING_REDIS_HOST: redis
+      SPRING_REDIS_PORT: 6379
+    depends_on:
+      - postgres
+      - redis
+
+volumes:
+  pgdata:
